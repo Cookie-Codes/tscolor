@@ -24,7 +24,9 @@
     "start:dev": "nodemon",
     "build": "rimraf ./build && tsc"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/node": "^13.1.8"
+  },
   "jest": {
     "roots": [
       "<rootDir>/src/test"

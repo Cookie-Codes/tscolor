@@ -1,29 +1,65 @@
-# TypeScript-Jest-Node Starter
+# Ts Colors
 
-[![Build Status](https://travis-ci.org/AngrySoilder/yarn-ts-jest-starter.svg?branch=master)](https://travis-ci.org/AngrySoilder/yarn-ts-jest-starter)
+Terminal Colors on The go
 
-**Dependencies**
-```
-yarn install 
-```
-
-**Test**
-
-```
-yarn run test // Runtest
-```
-**Build And Start**
-```
-yarn run start // Build And Start
-```
-**Start Dev Server**
-```
-yarn run start:dev // Start Development Server with Nodemon
+**Creating a new Terminal**
+```typescript
+let t: Terminal = new Terminal();
 ```
 
-**Build**
-```
-yarn run build // Rebuild
+**Do Default Style**
+1. Bold - bold()
+2. Underline - underline()
+3. StrikeThrough - strike()
+4. italic - italic()
+5. Intendentation - indent(3)
+6. Direction - direction(left | right | center)
+
+```typescript
+let t: Terminal = new Terminal();
+t.bold().fire("text")
+t.strike()
+t.fire("StrikeText")
 ```
 
 
+**Print with Tag**
+
+Terminal Support Tagging so that Different Configuration Can be Saved and we do not have to call functions everytime.
+
+**Setting tag at Runtime**
+
+```typescript
+>t.withcolor(red).bold().italic().fire(text);
+>t.tag("error").set().color().red().bold().italic().underlined()
+
+// Then
+//
+t.fire(text, "error")
+```
+
+
+**Set Tag as Values**
+
+Use file --> terminal.conf.ts | terminal.conf.js
+
+```js
+{
+  tags:
+  {
+    error:{
+
+    },
+    fun:{
+
+    },
+    bitchlife:{
+
+    }
+  }
+}
+```
+
+# Support
+
+# Meet me on Twitter
