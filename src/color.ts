@@ -12,6 +12,7 @@ export class Color {
     this.b = b;
   }
 
+
   get r() {
     return this._r;
   }
