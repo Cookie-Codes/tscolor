@@ -1,4 +1,11 @@
 import { Tag } from './tag';
+
+interface TagsList
+{
+  [index: number] : Tag;
+  [index: string] : Tag;
+}
+
 /**
  * Standard Handler
  * TODO: tags
@@ -9,6 +16,8 @@ export class Terminal {
 
     // Default Const
 
+    private tags: TagsList = {};
+
     private defualt_tag : Tag;
 
     constructor() {
@@ -16,15 +25,13 @@ export class Terminal {
       this.defualt_tag = new Tag('default', this);
     }
 
-
-    withcolor(color: string)
-    {
-        // Color Impl
+    default(): Tag{
+      return this.defualt_tag;
     }
 
     tag(tag: string) {
       let _tag = new Tag(tag, this);
-      this.tags.push(_tag);
+      this.tags[tag] = _tag;
       return _tag;
     }
 }

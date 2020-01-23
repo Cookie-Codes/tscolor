@@ -8,8 +8,6 @@ import { TerminalValues } from './values';
  */
 
 export class Tag extends Console{
-  private _terminal: Terminal;
-  private _name: string;
   private _color: Color = new Color(0,0,0);
   private _bold : boolean ;
   private _italic: boolean;
