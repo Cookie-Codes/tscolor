@@ -1,3 +1,4 @@
+import { ColorOutboundValue } from './exceptions';
 /**
  * This File Contain Large Enum
  */
@@ -18,7 +19,7 @@ export class Color {
   }
 
   set r(val: number) {
-    if (0 < val && val < 255) {
+    if (0 <= val && val <= 255) {
       this._r = val;
     } else {
       throw new ColorOutboundValue();
@@ -30,7 +31,7 @@ export class Color {
   }
 
   set g(val: number) {
-    if (0 < val && val < 255) {
+    if (0 <= val && val <= 255) {
       this._g = val;
     } else {
       throw new ColorOutboundValue();
@@ -42,7 +43,7 @@ export class Color {
   }
 
   set b(val: number) {
-    if (0 < val && val < 255) {
+    if (0 <= val && val <= 255) {
       this._b = val;
     } else {
       throw new ColorOutboundValue();

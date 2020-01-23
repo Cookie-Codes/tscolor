@@ -46,12 +46,13 @@ export class Tag{
   }
 
   reset() {
-    console.log("\033[0m");
+    console.log("\\033[0m");
   }
 
   toString(): string
   {
     let buffer: string = "";
+    buffer+= TerminalValues.ESCAPE;
     if(this._bold)
     {
       buffer += TerminalValues.BOLD;

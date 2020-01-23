@@ -1,7 +1,7 @@
 /**
  * Should be Used in Color Class
  */
-class ColorOutboundValue extends Error
+export class ColorOutboundValue extends Error
 {
   constructor()
   {
