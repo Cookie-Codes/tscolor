@@ -15,8 +15,6 @@ export class Terminal extends Console {
     tags: Tag[] = [];
     private defualt_tag : Tag;
 
-
-
     constructor() {
       super(stdout, stderr);
       this.defualt_tag = new Tag('default', this);
