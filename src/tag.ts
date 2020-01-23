@@ -24,17 +24,18 @@ export class Tag{
   }
 
   bold() {
-    this._bold = !this.bold;
+    this._bold = !this._bold;
+    console.log(this._bold)
     return this;
   }
 
   italic() {
-    this._italic = !this.italic;
+    this._italic = !this._italic;
     return this;
   }
 
   underline() {
-    this._underline = !this.underline;
+    this._underline = !this._underline;
     return this;
   }
 
@@ -57,7 +58,7 @@ export class Tag{
   toString(): string
   {
     let buffer: string = "";
-    buffer+= TerminalValues.ESCAPE;
+    buffer += TerminalValues.ESCAPE;
     if(this._bold)
     {
       buffer += TerminalValues.BOLD;
@@ -74,7 +75,7 @@ export class Tag{
     buffer += this._color.toString();
     buffer += TerminalValues.ENDING;
     buffer += TerminalValues.INDENTATION.repeat(this._indentation);
-
+    console.log(buffer);
     return buffer;
   }
 }
