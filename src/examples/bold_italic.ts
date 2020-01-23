@@ -1,4 +1,4 @@
 import { Terminal } from '../index';
 
 const t = new Terminal();
-t.default().bold().italic().log("Killer")
+t.bold().italic().log("Killer")
