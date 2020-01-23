@@ -1,5 +1,5 @@
 // TODO: Add Terminal Controls Here
-class TerminalValues
+export class TerminalValues
 {
   public static ESCAPE : string = '\033[';
   public static BOLD: string= '1';

@@ -2,6 +2,7 @@ import { Terminal } from './index';
 import { Color } from './color';
 import {Console} from 'console';
 import { stdout , stderr } from 'process';
+import { TerminalValues } from './values';
 /**
  * Tag File
  */
@@ -48,11 +49,35 @@ export class Tag extends Console{
     this._indentation = indentation;
   }
 
-  execute() {
+  log(message: string) {
     // TODO: Execute Tag Here
+    super.log(this.toString() + message);
+    this.reset();
   }
 
   reset() {
     this.log("\033[0m");
+  }
+
+  toString(): string
+  {
+    let buffer: string = "";
+    if(this._bold)
+    {
+      buffer += TerminalValues.BOLD;
+    }
+
+    if(this._italic){
+      buffer += TerminalValues.ITALIC;
+    }
+
+    if(this._underline)
+    {
+      buffer += TerminalValues.ITALIC;
+    }
+
+    buffer += TerminalValues.INDENTATION.repeat(this._indentation);
+    buffer += this._color.toString();
+    return buffer;
   }
 }

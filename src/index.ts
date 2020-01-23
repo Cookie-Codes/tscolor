@@ -1,4 +1,3 @@
-import { Console } from 'console'
 import { Tag } from './tag';
 /**
  * Standard Handler
@@ -10,8 +9,6 @@ export class Terminal {
 
     // Default Const
 
-    buffer = "";
-    tags: Tag[] = [];
     private defualt_tag : Tag;
 
     constructor() {
@@ -19,30 +16,6 @@ export class Terminal {
       this.defualt_tag = new Tag('default', this);
     }
 
-    bold() {
-      // define bold hrere
-    }
-
-    strike() {
-      // define strike here
-    }
-
-    underline() {
-      // define underline Here
-    }
-
-    indentation() {
-      // define indentation here
-    }
-
-
-    italic () {
-      // define italic here
-    }
-
-    /**
-     * Color Are Below
-     */
 
     withcolor(color: string)
     {
@@ -54,6 +27,4 @@ export class Terminal {
       this.tags.push(_tag);
       return _tag;
     }
-
-
 }
