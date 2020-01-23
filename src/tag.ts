@@ -1,6 +1,4 @@
 import { Color } from './color';
-import {Console} from 'console';
-import { stdout , stderr } from 'process';
 import { TerminalValues } from './values';
 /**
  * Tag File
