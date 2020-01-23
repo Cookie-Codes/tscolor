@@ -19,7 +19,6 @@ export class Tag {
               underline: boolean = false,
               indentation: number = 0,
               italic: boolean = false,
-              direction = "left"
               )
   {
     this._name = name;
@@ -28,7 +27,6 @@ export class Tag {
     this._underline = underline;
     this._indentation =indentation;
     this._italic = italic;
-    this._direction = direction;
   }
 
   bold():void {
@@ -50,5 +48,9 @@ export class Tag {
 
   execute() {
     // TODO: Execute Tag Here
+  }
+
+  reset() {
+
   }
 }

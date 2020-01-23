@@ -36,10 +36,7 @@ export class Terminal extends Console {
       // define indentation here
     }
 
-    direction() {
-      // define direction here
-    }
-
+  
     italic () {
       // define italic here
     }
