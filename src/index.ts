@@ -1,4 +1,3 @@
-import { stdout , stderr } from 'process';
 import { Console } from 'console'
 import { Tag } from './tag';
 /**
@@ -7,7 +6,7 @@ import { Tag } from './tag';
  * TODO: color
  * TODO: styles
  */
-export class Terminal extends Console {
+export class Terminal {
 
     // Default Const
 
@@ -16,7 +15,7 @@ export class Terminal extends Console {
     private defualt_tag : Tag;
 
     constructor() {
-      super(stdout, stderr);
+
       this.defualt_tag = new Tag('default', this);
     }
 
@@ -36,7 +35,7 @@ export class Terminal extends Console {
       // define indentation here
     }
 
-  
+
     italic () {
       // define italic here
     }

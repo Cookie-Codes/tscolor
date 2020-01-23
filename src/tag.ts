@@ -1,10 +1,12 @@
 import { Terminal } from './index';
 import { Color } from './color';
+import {Console} from 'console';
+import { stdout , stderr } from 'process';
 /**
  * Tag File
  */
 
-export class Tag {
+export class Tag extends Console{
   private _terminal: Terminal;
   private _name: string;
   private _color: Color = new Color(0,0,0);
@@ -12,7 +14,6 @@ export class Tag {
   private _italic: boolean;
   private _underline: boolean;
   private _indentation: number
-  private _direction: string;
   constructor(name: string,
               terminal: Terminal,
               bold: boolean = false,
@@ -21,6 +22,7 @@ export class Tag {
               italic: boolean = false,
               )
   {
+    super(stdout, stderr);
     this._name = name;
     this._terminal =terminal;
     this._bold = bold;
@@ -51,6 +53,6 @@ export class Tag {
   }
 
   reset() {
-
+    this.log("\033[0m");
   }
 }
