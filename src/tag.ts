@@ -6,7 +6,7 @@ import { TerminalValues } from './values';
  * Tag File
  */
 
-export class Tag extends Console{
+export class Tag{
   private _color: Color = new Color(0,0,0);
   private _bold : boolean ;
   private _italic: boolean;
@@ -17,7 +17,7 @@ export class Tag extends Console{
                indentation: number = 0,
                italic: boolean = false )
   {
-    super(stdout, stderr);
+
     this._bold = bold;
     this._underline = underline;
     this._indentation =indentation;
@@ -43,12 +43,12 @@ export class Tag extends Console{
 
   log(message: string) {
     // TODO: Execute Tag Here
-    super.log(this.toString() + message);
+    console.log(this.toString() + message);
     this.reset();
   }
 
   reset() {
-    this.log("\033[0m");
+    console.log("\033[0m");
   }
 
   toString(): string
