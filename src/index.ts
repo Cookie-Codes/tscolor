@@ -1,37 +1,42 @@
 import { Tag } from './tag';
 
-interface TagsList
-{
-  [index: number] : Tag;
-  [index: string] : Tag;
+interface TagsList {
+  [index: number]: Tag;
+  [index: string]: Tag;
 }
 
 /**
- * Standard Handler
+ * Standard Handler My way of Default
  * TODO: tags
  * TODO: color
  * TODO: styles
  */
-export class Terminal {
+export class Terminal extends Tag {
 
-    // Default Const
+  // Default Const
 
-    private tags: TagsList = {};
+  private tags: TagsList = {};
 
-    private defualt_tag : Tag;
 
-    constructor() {
+  constructor(
+    bold: boolean = false,
+    underline: boolean = false,
+    indentation: number = 0,
+    italic: boolean = false,
+    color: string = '#000000'
+  ) {
+    super(
+      bold = bold,
+      underline = underline,
+      indentation = indentation,
+      italic = italic,
+      color = color
+    );
+  }
 
-      this.defualt_tag = new Tag();
-    }
-
-    default(): Tag{
-      return this.defualt_tag;
-    }
-
-    tag(tag: string) {
-      let _tag = new Tag();
-      this.tags[tag] = _tag;
-      return _tag;
-    }
+  tag(tag: string) {
+    let _tag = new Tag();
+    this.tags[tag] = _tag;
+    return _tag;
+  }
 }
