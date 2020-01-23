@@ -1,8 +1,9 @@
-import { Color } from './color';
-import { TerminalValues } from './values';
 /**
  * Tag File
  */
+
+import { Color } from './color';
+import { TerminalValues } from './values';
 
 export class Tag{
   private _color: Color = new Color(0,0,0);
