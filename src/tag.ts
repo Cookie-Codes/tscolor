@@ -14,13 +14,16 @@ export class Tag{
   constructor( bold: boolean = false,
                underline: boolean = false,
                indentation: number = 0,
-               italic: boolean = false )
+               italic: boolean = false,
+               color:string = '#000000';
+              )
   {
 
     this._bold = bold;
     this._underline = underline;
     this._indentation =indentation;
     this._italic = italic;
+
   }
 
   bold() {
@@ -45,7 +48,6 @@ export class Tag{
   }
 
   log(message: string) {
-    // TODO: Execute Tag Here
     console.log(this.toString() + message);
     this.reset();
   }
@@ -54,6 +56,11 @@ export class Tag{
     console.log("\x1b[0m");
   }
 
+  /**
+   * Gives Terminal Configurations Depending Upon
+   * Settings
+   * @return Terminal Control Characters
+   */
   toString(): string
   {
     let buffer: string = "";
@@ -78,7 +85,6 @@ export class Tag{
     buffer += this._color.toString();
     buffer += TerminalValues.ENDING;
     buffer += TerminalValues.INDENTATION.repeat(this._indentation);
-    // console.log(buffer);
     return buffer;
   }
 }
