@@ -15,7 +15,7 @@ export class Tag extends Console{
   constructor( bold: boolean = false,
                underline: boolean = false,
                indentation: number = 0,
-               italic: boolean = false, )
+               italic: boolean = false )
   {
     super(stdout, stderr);
     this._bold = bold;

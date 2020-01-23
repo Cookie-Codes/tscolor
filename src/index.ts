@@ -22,7 +22,7 @@ export class Terminal {
 
     constructor() {
 
-      this.defualt_tag = new Tag('default', this);
+      this.defualt_tag = new Tag();
     }
 
     default(): Tag{
@@ -30,7 +30,7 @@ export class Terminal {
     }
 
     tag(tag: string) {
-      let _tag = new Tag(tag, this);
+      let _tag = new Tag();
       this.tags[tag] = _tag;
       return _tag;
     }
