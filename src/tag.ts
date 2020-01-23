@@ -25,7 +25,6 @@ export class Tag{
 
   bold() {
     this._bold = !this._bold;
-    console.log(this._bold)
     return this;
   }
 
@@ -61,21 +60,25 @@ export class Tag{
     buffer += TerminalValues.ESCAPE;
     if(this._bold)
     {
+
       buffer += TerminalValues.BOLD;
+      buffer += TerminalValues.SEPERATOR;
     }
 
     if(this._italic){
       buffer += TerminalValues.ITALIC;
+      buffer += TerminalValues.SEPERATOR;
     }
 
     if(this._underline)
     {
-      buffer += TerminalValues.ITALIC;
+      buffer += TerminalValues.UNDERLINE;
+      buffer += TerminalValues.SEPERATOR;
     }
     buffer += this._color.toString();
     buffer += TerminalValues.ENDING;
     buffer += TerminalValues.INDENTATION.repeat(this._indentation);
-    console.log(buffer);
+    // console.log(buffer);
     return buffer;
   }
 }
