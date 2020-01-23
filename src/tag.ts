@@ -1,4 +1,3 @@
-import { Terminal } from './index';
 import { Color } from './color';
 import {Console} from 'console';
 import { stdout , stderr } from 'process';
@@ -13,17 +12,12 @@ export class Tag extends Console{
   private _italic: boolean;
   private _underline: boolean;
   private _indentation: number
-  constructor(name: string,
-              terminal: Terminal,
-              bold: boolean = false,
-              underline: boolean = false,
-              indentation: number = 0,
-              italic: boolean = false,
-              )
+  constructor( bold: boolean = false,
+               underline: boolean = false,
+               indentation: number = 0,
+               italic: boolean = false, )
   {
     super(stdout, stderr);
-    this._name = name;
-    this._terminal =terminal;
     this._bold = bold;
     this._underline = underline;
     this._indentation =indentation;
