@@ -5,14 +5,14 @@ import { Color } from './color';
  */
 
 export class Tag {
-  private terminal: Terminal;
-  private name: string;
-  private color: Color = new Color(0,0,0);
-  private bold : boolean ;
-  private italic: boolean;
-  private underline: boolean;
-  private indentation: number
-  private direction: string;
+  private _terminal: Terminal;
+  private _name: string;
+  private _color: Color = new Color(0,0,0);
+  private _bold : boolean ;
+  private _italic: boolean;
+  private _underline: boolean;
+  private _indentation: number
+  private _direction: string;
   constructor(name: string,
               terminal: Terminal,
               bold: boolean = false,
@@ -22,14 +22,30 @@ export class Tag {
               direction = "left"
               )
   {
-    this.name = name;
-    this.terminal =terminal;
-    this.bold = bold;
-    this.underline = underline;
-    this.indentation =indentation;
-    this.italic = italic;
-    this.direction = direction;
+    this._name = name;
+    this._terminal =terminal;
+    this._bold = bold;
+    this._underline = underline;
+    this._indentation =indentation;
+    this._italic = italic;
+    this._direction = direction;
+  }
 
+  bold():void {
+    this._bold = !this.bold;
+  }
+
+  italic():void {
+    this._italic = !this.italic;
+  }
+
+  underline():void {
+    this._underline = !this.underline;
+  }
+
+  indentation(indentation: number)
+  {
+    this._indentation = indentation;
   }
 
   execute() {
