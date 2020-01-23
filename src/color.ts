@@ -51,6 +51,6 @@ export class Color {
   }
 
   toString() {
-    return ';' + this.r + ';' + this.g + ';' + this.b
+    return '38;2;' + this.r + ';' + this.g + ';' + this.b
   }
 }
