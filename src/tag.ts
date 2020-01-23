@@ -22,21 +22,25 @@ export class Tag{
     this._italic = italic;
   }
 
-  bold():void {
+  bold() {
     this._bold = !this.bold;
+    return this;
   }
 
-  italic():void {
+  italic() {
     this._italic = !this.italic;
+    return this;
   }
 
-  underline():void {
+  underline() {
     this._underline = !this.underline;
+    return this;
   }
 
   indentation(indentation: number)
   {
     this._indentation = indentation;
+    return this;
   }
 
   log(message: string) {
@@ -46,7 +50,7 @@ export class Tag{
   }
 
   reset() {
-    console.log("\\033[0m");
+    console.log("\x1b[0m");
   }
 
   toString(): string
@@ -66,9 +70,10 @@ export class Tag{
     {
       buffer += TerminalValues.ITALIC;
     }
-
-    buffer += TerminalValues.INDENTATION.repeat(this._indentation);
     buffer += this._color.toString();
+    buffer += TerminalValues.ENDING;
+    buffer += TerminalValues.INDENTATION.repeat(this._indentation);
+
     return buffer;
   }
 }
