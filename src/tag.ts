@@ -79,7 +79,7 @@ export class Tag{
    * @param  message message
    * @return         void
    */
-  log(message: string) {
+  log(message: string): Tag {
     console.log(this.toString() + message);
     this.reset();
     return this;
