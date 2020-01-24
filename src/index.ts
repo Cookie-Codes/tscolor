@@ -17,7 +17,6 @@ export class Terminal extends Tag {
 
   private tags: TagsList = {};
 
-
   constructor(
     bold: boolean = false,
     underline: boolean = false,
@@ -34,8 +33,37 @@ export class Terminal extends Tag {
     );
   }
 
-  tag(tag: string) {
-    let _tag = new Tag();
+  log(message: string, tag?: string): Tag
+  {
+    if(tag == undefined)
+    {
+      super.log(message);
+      return this;
+    }else if(tag in this.tags)
+    {
+      let _tag = this.tags[tag];
+      _tag.log(message);
+      return _tag;
+    }else{
+      throw new Error("Invalid Tag");
+    }
+  }
+
+  tag(
+    tag: string,
+    bold: boolean = false,
+    underline: boolean = false,
+    indentation: number = 0,
+    italic: boolean = false,
+    color: string = '#000000'
+  ) {
+    let _tag = new Tag(
+      bold = bold,
+      underline=underline,
+      indentation = indentation,
+      italic = italic,
+      color=color
+    );
     this.tags[tag] = _tag;
     return _tag;
   }
