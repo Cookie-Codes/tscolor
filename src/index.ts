@@ -1,4 +1,5 @@
 import { Tag } from './tag';
+import { TagError } from './exceptions';
 
 interface TagsList {
   [index: number]: Tag;
@@ -45,7 +46,7 @@ export class Terminal extends Tag {
       _tag.log(message);
       return _tag;
     }else{
-      throw new Error("Invalid Tag");
+      throw new TagError();
     }
   }
 
