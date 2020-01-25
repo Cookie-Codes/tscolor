@@ -18,6 +18,15 @@ export class Terminal extends Tag {
 
   private tags: TagsList = {};
 
+  /**
+   * Terminal
+   * @param  bold        boolean; Bold
+   * @param  underline   bold: Underline
+   * @param  indentation number: multiple of 4 spaces
+   * @param  italic      boolean: italic
+   * @param  color       Hex code like css
+   * @return             Tag
+   */
   constructor(
     bold: boolean = false,
     underline: boolean = false,
@@ -34,6 +43,12 @@ export class Terminal extends Tag {
     );
   }
 
+  /**
+   * Overinding Smaple Tag
+   * @param  message message
+   * @param  tag     stirng tag
+   * @return         Tag
+   */
   log(message: string, tag?: string): Tag
   {
     if(tag == undefined)
@@ -50,6 +65,16 @@ export class Terminal extends Tag {
     }
   }
 
+/**
+ * Tag Generator
+ * @param  tag         String: Name of Tag
+ * @param  bold        boolean; Bold
+ * @param  underline   bold: Underline
+ * @param  indentation number: multiple of 4 spaces
+ * @param  italic      boolean: italic
+ * @param  color       Hex code like css
+ * @return             Tag
+ */
   tag(
     tag: string,
     bold: boolean = false,
