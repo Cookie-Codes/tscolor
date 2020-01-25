@@ -27,7 +27,6 @@ Terminal Support Tagging so that Different Configuration Can be Saved and we do 
 **Setting tag**
 
 ```typescript
->t.withrgb(23,44,33).bold().italic().log(text);
 >t.tag("error").color().red().bold().italic().underlined()
 
 
