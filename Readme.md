@@ -13,13 +13,10 @@ let t: Terminal = new Terminal();
 3. StrikeThrough - strike()
 4. italic - italic()
 5. Intendentation - indent(3)
-6. Direction - direction(left | right | center)
 
 ```typescript
 let t: Terminal = new Terminal();
-t.bold().fire("text")
-t.strike()
-t.fire("StrikeText")
+t.bold().log("text")
 ```
 
 
@@ -27,39 +24,27 @@ t.fire("StrikeText")
 
 Terminal Support Tagging so that Different Configuration Can be Saved and we do not have to call functions everytime.
 
-**Setting tag at Runtime**
+**Setting tag**
 
 ```typescript
->t.withcolor(red).bold().italic().fire(text);
->t.tag("error").set().color().red().bold().italic().underlined()
+>t.withrgb(23,44,33).bold().italic().log(text);
+>t.tag("error").color().red().bold().italic().underlined()
 
-// Then
-//
-t.fire(text, "error")
+
+/**
+ * @param text text to pring
+ * @param tag tag you generated
+ * @returns Tag differnet from default terminal tag
+ */
+t.log(text, "error")
 ```
 
-
-**Set Tag as Values**
-
-Use file --> terminal.conf.ts | terminal.conf.js
-
-```js
-{
-  tags:
-  {
-    error:{
-
-    },
-    fun:{
-
-    },
-    bitchlife:{
-
-    }
-  }
-}
-```
-
-# Support
+# Support & Suggestions
+- accepted
 
 # Meet me on Twitter
+
+## [![alt text][1.1]][1]
+
+[1.1]: http://i.imgur.com/tXSoThF.png
+[1]:https://twitter.com/al_chudhari
