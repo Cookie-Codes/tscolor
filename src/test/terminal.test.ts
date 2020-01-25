@@ -2,6 +2,7 @@
  * Testing Terminal Here
  */
 import { Terminal } from '../index';
+import {Tag} from '../tag';
 
 test('Testing Constructor', () => {
   let term : Terminal = new Terminal(true, true, 1, true, '#ffffff');
@@ -17,14 +18,19 @@ test("Testing Inheritance ", () => {
 });
 
 test("Testing Log", () => {
-
+  let term : Terminal = new Terminal()
+  expect(term.log("Log this")).toBe(term);
 });
 
-test("Testing Tag Generator", ()=> {
 
+test("Testing Exception", () => {
+  let term: Terminal =  new Terminal();
+  expect(() => term.log("Dargvy", 'notag')).toThrow(Error);
 });
 
-test("Else Part of Log", ()=>
-{
+test("Testing Log Object", () => {
+  let term : Terminal = new Terminal();
+  let stat: Tag = term.tag('killer');
 
+  expect(term.log(" Kill it", 'killer')).toBe(stat);
 });
