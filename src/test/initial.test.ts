@@ -1,5 +1,4 @@
 import { Color } from "../color";
-import { ColorOutboundValue } from '../exceptions'
 
 
 test("Color Test", () =>
