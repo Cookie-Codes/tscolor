@@ -1,8 +1,10 @@
 {
   "name": "tscolor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple Terminal Printing API",
-  "keywords": ["Terminal"],
+  "keywords": [
+    "Terminal"
+  ],
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "author": "Akash Chaudhari",
@@ -44,5 +46,7 @@
     "coverageDirectory": "coverage",
     "testEnvironment": "node"
   },
-  "files" : ["build/**/*"]
+  "files": [
+    "build/**/*"
+  ]
 }
