@@ -1,7 +1,8 @@
 {
   "name": "tscolor",
   "version": "1.0.0",
-  "description": "Start For Me",
+  "description": "Simple Terminal Printing API",
+  "keywords": ["Terminal"]
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "author": "Akash Chaudhari",
@@ -42,5 +43,6 @@
     "clearMocks": true,
     "coverageDirectory": "coverage",
     "testEnvironment": "node"
-  }
+  },
+  "files" : ["build/**/*"]
 }
