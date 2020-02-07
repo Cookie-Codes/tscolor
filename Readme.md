@@ -1,25 +1,26 @@
 # Ts Colors
+
 [![Build Status](https://travis-ci.org/al-chaudhari/tscolor.svg?branch=master)](https://travis-ci.org/al-chaudhari/tscolor)
 
-Terminal Colors on The go
+Terminal Colors on The go (Currently No Window Support)
 
 **Creating a new Terminal**
+
 ```typescript
 let t: Terminal = new Terminal();
 ```
 
 **Do Default Style**
+
 1. Bold - bold()
 2. Underline - underline()
-3. StrikeThrough - strike()
-4. italic - italic()
-5. Intendentation - indent(3)
+3. italic - italic()
+4. Intendentation - indent(3)
 
 ```typescript
 let t: Terminal = new Terminal();
-t.bold().log("text")
+t.bold().log("text");
 ```
-
 
 **Print with Tag**
 
@@ -28,18 +29,12 @@ Terminal Support Tagging so that Different Configuration Can be Saved and we do 
 **Setting tag**
 
 ```typescript
->t.tag("error").color().red().bold().italic().underlined()
-
-
-/**
- * @param text text to pring
- * @param tag tag you generated
- * @returns Tag differnet from default terminal tag
- */
-t.log(text, "error")
+>t.tag("error").bold()
+>t.log(text, "error")
 ```
 
 # Support & Suggestions
+
 - accepted
 
 # Meet me on Twitter
@@ -47,4 +42,4 @@ t.log(text, "error")
 ## [![alt text][1.1]][1]
 
 [1.1]: http://i.imgur.com/tXSoThF.png
-[1]:https://twitter.com/al_chudhari
+[1]: https://twitter.com/al_chudhari
